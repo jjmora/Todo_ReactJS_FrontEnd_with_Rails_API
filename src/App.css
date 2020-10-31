@@ -6,3 +6,12 @@
 body{
   margin: 30px;
 }
+
+li{
+  list-style: none;
+  line-height: 2rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px lightseagreen;
+  border-radius: 10px;
+}

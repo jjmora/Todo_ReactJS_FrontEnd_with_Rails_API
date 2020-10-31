@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import QuotesList from "./Quotes/QuotesList"
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Funny Quotes</h1>
         <hr />
-        <button className="btn btn-primary">Send</button>
+        <QuotesList />
       </header>
     </div>
   );
