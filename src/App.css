@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize;
 }
 
 body{
   margin: 30px;
+}
+
+h2{
+  font-size: 1.6rem;
 }
 
 li{
@@ -14,4 +22,9 @@ li{
   margin-bottom: 10px;
   border: solid 1px lightseagreen;
   border-radius: 10px;
+}
+
+.todos-items .btn{
+  height: 2.5rem;
+  align-self: center;
 }
