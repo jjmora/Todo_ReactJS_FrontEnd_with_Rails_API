@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import TodoForm from "./TodoForm"
 import TodoItem from "./TodoItem"
 
 const api_url = 'http://localhost:3001/api/v1/todos'
@@ -10,6 +11,7 @@ class TodoList extends Component {
     this.state = {
       items: []
     }
+    this.updateTodoList = this.updateTodoList.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
   }
 
@@ -24,6 +26,14 @@ class TodoList extends Component {
       this.setState({
         items: response_items
       })
+    })
+  }
+
+  updateTodoList(item) {
+    let _items = this.state.items
+    _items.unshift(item)
+    this.setState({
+      items: _items
     })
   }
 
@@ -46,6 +56,9 @@ class TodoList extends Component {
   render() {
     return(
       <div>
+        <TodoForm 
+          api_url={api_url} 
+          updateTodoList={this.updateTodoList} />
         <ul>
           {this.state.items.map((item) => (
             <TodoItem 
