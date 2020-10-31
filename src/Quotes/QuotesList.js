@@ -29,13 +29,16 @@ class QuotesList extends Component {
 
   deleteQuote(quote) {
     // delete the quote on data base
-    console.log(quote)
-    console.log(`quote id: ${quote.id}`)
     var deleteURL = api_url + `/${quote.id}`
     fetch(deleteURL, {
       method: "DELETE"
     }).then(() => {
-      console.log("Deleted")
+      var _quotes = this.state.quotes
+      var index = _quotes.indexOf(quote)
+      _quotes.splice(index, 1)
+      this.setState({
+        quotes: _quotes
+      })
     })
   }
 
