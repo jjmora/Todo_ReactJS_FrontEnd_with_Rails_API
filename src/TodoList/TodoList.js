@@ -2,7 +2,11 @@ import React, {Component} from "react"
 import TodoForm from "./TodoForm"
 import TodoItem from "./TodoItem"
 
-const api_url = 'http://localhost:3001/api/v1/todos'
+// Development
+// const api_url = 'http://localhost:3001/api/v1/todos'
+
+// Production
+const api_url = 'https://jjm-api-rails5.herokuapp.com/api/v1/todos'
 
 class TodoList extends Component {
   constructor(props) {
