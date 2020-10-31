@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Funny Quotes</h1>
         <hr />
+        <button className="btn btn-primary">Send</button>
       </header>
     </div>
   );
