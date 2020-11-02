@@ -64,9 +64,10 @@ class TodoForm extends Component {
         <form
           onSubmit={this.handleSubmit}
           id="todo_form"
-          autoComplete="off">
+          autoComplete="off"
+          className={this.props.toggle}>
           <div className="form-group d-flex flex-column">
-            <label htmlFor="task_title">Title: </label>
+            <label htmlFor="task_title" className="font-weight-bold">Title: </label>
             <input 
               id="task_title"
               type="text"
@@ -75,7 +76,7 @@ class TodoForm extends Component {
             />
           </div>
           <div className="form-group d-flex flex-column">
-            <label htmlFor="task_description">Description: </label>
+            <label htmlFor="task_description" className="font-weight-bold">Description: </label>
             <input 
               id="task_description"
               type="text"

@@ -31,8 +31,17 @@ li{
 
 .data-content{
   cursor: pointer;
+  width: 80%;
 }
 
 .data-content:hover{
   font-weight: bolder;
+}
+
+.hide-text{
+  display: none;
+}
+
+.show-text{
+  display: block;
 }
