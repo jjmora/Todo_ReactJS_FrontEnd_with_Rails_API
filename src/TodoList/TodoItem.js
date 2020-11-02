@@ -4,16 +4,17 @@ export default function TodoItem(props) {
   function handleDelete() {
     props.deleteItem(props.item)
   }
-  function handleEdit(){
+  function handleEdit() {
     props.editItem(props.item)
   }
-  function handleSelection(){
+  function handleSelection() {
     props.selectItem(props.item)
   }
+
   return(
     <div className="todos-items" onClick={handleSelection}>
       <li className="shadow-sm d-flex justify-content-between">
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column data-content">
           <span className="font-weight-bold">
             {props.item.id} : {props.item.title}
           </span>
@@ -26,10 +27,16 @@ export default function TodoItem(props) {
           </span> */}
         </div>
         <div>
-          <button className="btn btn-warning font-weight-bold mx-2" onClick={handleEdit} >
+          <button 
+            className="btn btn-warning font-weight-bold mx-2" 
+            onClick={handleEdit} 
+          >
             Edit
           </button>
-          <button className="btn btn-info font-weight-bold" onClick={handleDelete} >
+          <button 
+            className="btn btn-info font-weight-bold" 
+            onClick={handleDelete} 
+          >
             Delete
           </button>
         </div>

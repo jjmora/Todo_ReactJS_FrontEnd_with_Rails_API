@@ -28,3 +28,11 @@ li{
   height: 2.5rem;
   align-self: center;
 }
+
+.data-content{
+  cursor: pointer;
+}
+
+.data-content:hover{
+  font-weight: bolder;
+}
