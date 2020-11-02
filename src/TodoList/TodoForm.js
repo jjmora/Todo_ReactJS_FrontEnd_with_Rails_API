@@ -8,6 +8,8 @@ class TodoForm extends Component {
       api_url: props.api_url,
       title: "",
       description: "",
+      input_title: props.input_title,
+      input_description: props.input_description,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleReset = this.handleReset.bind(this)
@@ -53,8 +55,12 @@ class TodoForm extends Component {
   }
 
   render() {
+    // var title = this.props.input_title
+    // var description = this.props.input_description
     return (
       <div>
+        {/* <h1>{title}</h1>
+        <h2>{description}</h2> */}
         <form
           onSubmit={this.handleSubmit}
           id="todo_form"
@@ -80,7 +86,7 @@ class TodoForm extends Component {
             <input type="submit" value="Submit" className="btn btn-primary mb-4" />
             <input type="button" value="Reset" onClick={this.handleReset} className="btn btn-info mx-2 mb-4" />
         </form>
-        
+
       </div>
     )
   }
