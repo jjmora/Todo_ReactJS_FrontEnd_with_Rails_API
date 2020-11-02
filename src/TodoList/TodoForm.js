@@ -10,7 +10,9 @@ class TodoForm extends Component {
       description: "",
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleTaskChange = this.handleTaskChange.bind(this)
+    this.handleReset = this.handleReset.bind(this)
+    this.handleTitleChange = this.handleTitleChange.bind(this)
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
   }
 
   handleSubmit(event) {
@@ -28,9 +30,25 @@ class TodoForm extends Component {
     .then(response => this.props.updateTodoList(response))
   }
 
-  handleTaskChange(event) {
+  handleTitleChange(event) {
     this.setState({
       title: event.target.value
+    })
+  }
+
+  handleDescriptionChange(event) {
+    this.setState({
+      description: event.target.value
+    })
+  }
+
+  handleReset(){
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+    this.setState({
+      title: "",
+      description: ""
     })
   }
 
@@ -47,7 +65,7 @@ class TodoForm extends Component {
               id="task_title"
               type="text"
               name="todo[title]"
-              onChange={this.handleTaskChange} 
+              onChange={this.handleTitleChange} 
             />
           </div>
           <div className="form-group d-flex flex-column">
@@ -56,11 +74,13 @@ class TodoForm extends Component {
               id="task_description"
               type="text"
               name="todo[description]"
-              onChange={this.handleTaskChange} 
+              onChange={this.handleDescriptionChange} 
             /> 
           </div>
             <input type="submit" value="Submit" className="btn btn-primary mb-4" />
+            <input type="button" value="Reset" onClick={this.handleReset} className="btn btn-info mx-2 mb-4" />
         </form>
+
       </div>
     )
   }
