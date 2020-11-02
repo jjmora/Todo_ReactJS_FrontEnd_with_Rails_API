@@ -80,7 +80,7 @@ class TodoForm extends Component {
             <input type="submit" value="Submit" className="btn btn-primary mb-4" />
             <input type="button" value="Reset" onClick={this.handleReset} className="btn btn-info mx-2 mb-4" />
         </form>
-
+        
       </div>
     )
   }

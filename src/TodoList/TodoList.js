@@ -13,10 +13,13 @@ class TodoList extends Component {
     super(props)
 
     this.state = {
-      items: []
+      items: [],
+      input_title: '',
+      input_description: ''
     }
     this.updateTodoList = this.updateTodoList.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
+    this.editItem = this.editItem.bind(this)
   }
 
   componentDidMount() {
@@ -57,19 +60,36 @@ class TodoList extends Component {
     })
   }
 
+  editItem(item){
+    console.log('FROM TODO LIST:')
+    console.log(item)
+    console.log(item.title)
+    console.log(item.description)
+    this.setState({
+      input_title: item.title,
+      input_description: item.description
+    })
+  }
+
   render() {
     return(
       <div>
         <TodoForm 
           api_url={api_url} 
-          updateTodoList={this.updateTodoList} />
+          updateTodoList={this.updateTodoList} 
+          input_title={this.state.input_title}
+          input_description={this.state.input_description}
+        />
         <ul>
           {this.state.items.map((item) => (
-            <TodoItem 
-              key={item.id}
-              item={item}
-              deleteItem={this.deleteItem} 
-            />
+            <div key={item.id}>
+              <TodoItem 
+                item={item}
+                deleteItem={this.deleteItem} 
+                editItem={this.editItem} 
+              />
+            </div>
+
           ))}
         </ul>
       </div>

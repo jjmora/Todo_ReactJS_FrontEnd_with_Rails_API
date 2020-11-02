@@ -4,6 +4,9 @@ export default function TodoItem(props) {
   function handleDelete() {
     props.deleteItem(props.item)
   }
+  function handleEdit(){
+    props.editItem(props.item)
+  }
   return(
     <div className="todos-items">
       <li className="shadow-sm d-flex justify-content-between">
@@ -15,9 +18,14 @@ export default function TodoItem(props) {
             {props.item.description}
           </span>
         </div>
-        <button className="btn btn-info font-weight-bold" onClick={handleDelete} >
-          Delete
-        </button>
+        <div>
+          <button className="btn btn-warning font-weight-bold mx-2" onClick={handleEdit} >
+            Edit
+          </button>
+          <button className="btn btn-info font-weight-bold" onClick={handleDelete} >
+            Delete
+          </button>
+        </div>
       </li>
     </div>
   )
