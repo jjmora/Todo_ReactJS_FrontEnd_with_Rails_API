@@ -185,7 +185,11 @@ class TodoList extends Component {
         </form>
         {/* ## EDIT FORM */}
 
-        <p>{this.state.warning}</p>
+        <p className="text-right p-0 m-0">
+          <small>
+            <i className="text-secondary">* Click on a item to Edit</i>
+          </small> 
+        </p>
         <ul className={toggle ? "show-text" : "hide-text"}>
           {this.state.items.map((item) => (
             <div key={item.id}>
