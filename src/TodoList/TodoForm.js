@@ -30,6 +30,7 @@ class TodoForm extends Component {
       body: data
     }).then(response => response.json())
     .then(response => this.props.updateTodoList(response))
+    .then(this.handleReset())
   }
 
   handleTitleChange(event) {
