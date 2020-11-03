@@ -47,11 +47,7 @@ class TodoList extends Component {
   updateTodoList(item) {
     let _items = this.state.items
     _items.unshift(item)  //unshift add new element at the begining of the array
-    console.log('ITEMS:')
-    console.log(_items)
     _items.sort()
-    console.log('ITEMS SORTED:')
-    console.log(_items)
     this.setState({
       items: _items,
     })
